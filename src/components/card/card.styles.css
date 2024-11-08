@@ -34,7 +34,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
-    color: var(--card-color);
+    color: #6a628b;
     line-height: 1.25rem;
   }
 }

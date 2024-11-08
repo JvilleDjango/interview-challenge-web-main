@@ -1,7 +1,11 @@
 import React from "react";
 import "./youtube-embed.styles.css";
 
-const YouTubeEmbed = ({ youtubeId }) => {
+interface YouTubeEmbedProps {
+  youtubeId: string;
+}
+
+const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ youtubeId }) => {
   return (
     <div className="youtube-embed">
       <iframe

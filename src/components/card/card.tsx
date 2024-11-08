@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import "./card.styles.css";
 import { useYouTube } from "../../context/youtube.context";
 import { formatTime } from "../../utilities";
 
-const Card = ({
+interface CardProps {
+  id: string;
+  images: {
+    mini: string;
+  };
+  title: string;
+  color: string;
+  description: string;
+  durationSeconds: number;
+  youtubeId: string;
+  isDebugMode: boolean;
+}
+
+const Card: React.FC<CardProps> = ({
   id,
   images,
   title,
-  color,
   description,
   durationSeconds,
   youtubeId,
@@ -21,7 +33,7 @@ const Card = ({
   };
 
   return (
-    <section className="card" id={id} onClick={handleClick} style={{"--card-color": color}}>
+    <section className="card" id={id} onClick={handleClick}>
       <div className="card__media">
         <figure>
           <img src={images.mini} alt={title} />

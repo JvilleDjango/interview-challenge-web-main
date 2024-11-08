@@ -3,8 +3,8 @@
   height: calc(100vh - 41px);
   padding: 1rem 6rem;
   color: #fff;
-  border-bottom: var(--border-color);
-
+  border-bottom: var(--masthead-bottom-border);
+  background-color: var(--masthead-bg-color);
   background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.4) 33%,

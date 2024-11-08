@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 
-import { App } from "./components/App";
+import { App } from "./pages/App";
 
 import Spinner from "./components/spinner";
 import ErrorBoundary from "./components/error-boundary";

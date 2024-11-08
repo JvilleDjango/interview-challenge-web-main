@@ -1,0 +1,30 @@
+.video-series {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.video-gallery {
+  padding: 3rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.063rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .video-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-gallery {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+}

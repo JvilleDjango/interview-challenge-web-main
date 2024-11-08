@@ -1,0 +1,71 @@
+.card {
+  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+  border-radius: 0.625rem;
+}
+
+.card:hover {
+  transform: scale(1.025);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.card__media {
+  figure {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.card__body {
+  padding: 0 1rem;
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    color: var(--card-color);
+    line-height: 1.25rem;
+  }
+}
+
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  color: #000;
+  font-weight: 600;
+
+  .card__actions__play {
+    font-size: 1.55rem;
+    line-height: 1.4rem;
+    color: #fff;
+    border-radius: 3.125rem;
+    background-color: #000;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card__actions__play:after {
+    content: "\203A";
+    display: block;
+    position: absolute;
+  }
+
+  div:first-child {
+    font-size: 0.875rem;
+  }
+}

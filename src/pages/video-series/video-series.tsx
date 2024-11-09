@@ -7,11 +7,11 @@ const VideoSeries: React.FC = () => {
   const isDebugMode = new URLSearchParams(window.location.search).has("debug");
   const { data, loading, error } = useFetch("/api/data.json", isDebugMode);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <p role="status" aria-live="polite">Loading...</p>;
+  if (error) return <p role="alert">Error: {error}</p>;
 
   return (
-    <section className="video-series">
+    <section className="video-series" aria-labelledby="video-series-title" aria-describedby="video-series-description">
       {data && (
         <>
           <MastHead
@@ -20,7 +20,7 @@ const VideoSeries: React.FC = () => {
             image={data.images.large}
             color={data.color}
           />
-          <section className="video-gallery">
+          <section className="video-gallery" aria-label="Video Gallery">
             {data.videos.map((video) => (
               <Card {...video} key={video.id} isDebugMode={isDebugMode} />
             ))}

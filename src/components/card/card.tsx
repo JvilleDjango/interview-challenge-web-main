@@ -29,23 +29,36 @@ const Card: React.FC<CardProps> = ({
 
   const handleClick = () => {
     setSelectedYouTubeId(youtubeId, isDebugMode);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <section className="card" id={id} onClick={handleClick}>
-      <div className="card__media">
+    <section
+      className="card"
+      id={id}
+      onClick={handleClick}
+      role="button"
+      aria-labelledby={`${id}-title`}
+      aria-describedby={`${id}-description ${id}-duration`}
+    >
+      <div
+        className="card__media"
+        role="img"
+        aria-label={`Video thumbnail for ${title}`}
+      >
         <figure>
-          <img src={images.mini} alt={title} />
+          <img src={images.mini} alt={`Thumbnail for ${title}`} />
         </figure>
       </div>
       <div className="card__body">
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <h4 id={`${id}-title`}>{title}</h4>
+        <p id={`${id}-description`}>{description}</p>
       </div>
       <div className="card__actions">
-        <div>{formatTime(durationSeconds)} minutes</div>
-        <div className="card__actions__play" ></div>
+        <div id={`${id}-duration`} aria-label="Video duration">
+          {formatTime(durationSeconds)} minutes
+        </div>
+        <div className="card__actions__play" aria-hidden="true"></div>
       </div>
     </section>
   );

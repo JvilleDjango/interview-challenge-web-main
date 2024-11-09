@@ -37,6 +37,7 @@ const Card: React.FC<CardProps> = ({
       className="card"
       id={id}
       onClick={handleClick}
+      onKeyDown={(e) => e.key === 'Enter' && handleClick()}
       role="button"
       aria-labelledby={`${id}-title`}
       aria-describedby={`${id}-description ${id}-duration`}

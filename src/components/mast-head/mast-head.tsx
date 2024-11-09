@@ -21,12 +21,12 @@ const MastHead: React.FC<MastHeadProps> = ({ title, description, image, color })
       '--masthead-bg-color': color,
       '--masthead-bottom-border': `10px solid ${color}`,
     } as React.CSSProperties}>
-      <article className="mast-head__left-column">
+      <header className="mast-head__left-column">
         <h1>BibleProject</h1>
         <h2>{title}</h2>
         <p>{description}</p>
-      </article>
-      <article className="mast-head__right-column">
+      </header>
+      <aside className="mast-head__right-column">
         {loading ? (
           <Spinner /> 
         ) : error ? (
@@ -34,7 +34,7 @@ const MastHead: React.FC<MastHeadProps> = ({ title, description, image, color })
         ) : (
           selectedYouTubeId && <YouTubeEmbed youtubeId={selectedYouTubeId} />
         )}
-      </article>
+      </aside>
     </section>
   );
 };
